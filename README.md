@@ -1,2 +1,2 @@
 # TaskPlannerKotlinAda
-Task planner proyecto for Ada School Kotlin Full Stack Course
+Task planner integration project for Ada School Kotlin Full Stack Course
