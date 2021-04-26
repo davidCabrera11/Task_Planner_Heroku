@@ -11,22 +11,36 @@ class UserServiceHashMap:UserService {
     private val nextOid = AtomicLong()
 
     override fun save(userDto: UserDto): User {
-        TODO("Not yet implemented")
+        val user = User(nextOid.incrementAndGet(),userDto)
+        users[userDto.id] = user
+        return user
+
     }
 
     override fun update(userId: String, userDto: UserDto): User {
-        TODO("Not yet implemented")
+        if (users.containsKey(userId)){
+            val user = users[userId]
+            users[userId] = User(user!!.oid,userDto)
+        }
+        return users[userId]!!
+
     }
 
     override fun findReserveById(userId: String): User? {
-        TODO("Not yet implemented")
+        return if (users.containsKey(userId))
+            users[userId]
+        else
+            null
+
     }
 
     override fun all(): List<User> {
-        TODO("Not yet implemented")
+        return users.values.toList()
+
     }
 
     override fun delete(userId: String): Boolean {
-        TODO("Not yet implemented")
+        return users.remove(userId) != null
     }
+
 }
