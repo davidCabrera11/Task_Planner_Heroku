@@ -15,7 +15,7 @@ interface UserService {
     fun update(userId: String,userDto: UserDto):User
 
     //Read specific reserve
-    fun findReserveById(userId: String):User?
+    fun findUserById(userId: String):User?
 
     //Read all reserves
     fun all():List<User>

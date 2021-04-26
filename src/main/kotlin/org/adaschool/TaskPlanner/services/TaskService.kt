@@ -14,7 +14,7 @@ interface TaskService {
     fun update(taskId: String,taskDto: TaskDto):Task
 
     //Read specific reserve
-    fun findReserveById(taskId: String):Task?
+    fun findTaskById(taskId: String):Task?
 
     //Read all reserves
     fun all():List<Task>

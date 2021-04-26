@@ -2,8 +2,10 @@ package org.adaschool.TaskPlanner.services
 
 import org.adaschool.TaskPlanner.controller.dto.TaskDto
 import org.adaschool.TaskPlanner.model.Task
+import org.springframework.stereotype.Service
 import java.util.concurrent.atomic.AtomicLong
 
+@Service
 class TaskServiceHashMap:TaskService {
 
     private val tasks = HashMap<String,Task>()
@@ -26,7 +28,7 @@ class TaskServiceHashMap:TaskService {
 
     }
 
-    override fun findReserveById(taskId: String): Task? {
+    override fun findTaskById(taskId: String): Task? {
         return if (tasks.containsKey(taskId))
             tasks[taskId]
         else
