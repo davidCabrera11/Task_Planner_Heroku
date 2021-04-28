@@ -35,7 +35,7 @@ class UserController(@Autowired val userService: UserService) {
     }
 
     //Update
-    @PutMapping
+    @PutMapping("/{id}")
     fun update(@PathVariable id: String, @RequestBody userDto: UserDto): User?{
         return userService.update(id,userDto)
 

@@ -37,7 +37,7 @@ class TaskController(@Autowired val taskService: TaskService){
     }
 
     //Update
-    @PutMapping
+    @PutMapping("/{id}")
     fun update(@PathVariable id: String, @RequestBody taskDto: TaskDto): Task?{
         return taskService.update(id,taskDto)
 
