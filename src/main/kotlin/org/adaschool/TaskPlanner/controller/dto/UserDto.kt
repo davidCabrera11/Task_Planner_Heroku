@@ -2,6 +2,7 @@ package org.adaschool.TaskPlanner.controller.dto
 
 import org.adaschool.TaskPlanner.utils.RoleEnum
 
+
 data class UserDto(
     val id:String,
     val name:String,

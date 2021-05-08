@@ -3,7 +3,7 @@ package org.adaschool.TaskPlanner.model
 import org.adaschool.TaskPlanner.controller.dto.UserDto
 import org.adaschool.TaskPlanner.utils.RoleEnum
 import org.springframework.security.crypto.bcrypt.BCrypt
-import javax.annotation.security.DeclareRoles
+
 
 data class User(
     val oid:Long,

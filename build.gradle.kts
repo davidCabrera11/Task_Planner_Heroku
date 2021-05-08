@@ -24,8 +24,6 @@ dependencies {
 	implementation("org.springframework.security:spring-security-crypto")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
-	implementation ("jakarta.xml.bind:jakarta.xml.bind-api:2.3.2")
-	implementation ("org.glassfish.jaxb:jaxb-runtime:2.3.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
