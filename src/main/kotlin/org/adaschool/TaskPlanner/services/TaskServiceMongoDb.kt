@@ -9,23 +9,34 @@ class TaskServiceMongoDb(@Autowired val taskRepository: TaskRepository):TaskServ
 
 
     override fun save(taskDto: TaskDto): Task {
-        TODO("Not yet implemented")
+        return taskRepository.save(Task(taskDto))
+
     }
 
     override fun update(taskId: String, taskDto: TaskDto): Task {
-        TODO("Not yet implemented")
+        val task = taskRepository.findById(taskId).get()
+        task.update(taskDto)
+        return taskRepository.save(task)
+
     }
 
     override fun findTaskById(taskId: String): Task? {
-        TODO("Not yet implemented")
-    }
+        return taskRepository.findById(taskId).orElse(null)
+
+     }
 
     override fun all(): List<Task> {
-        TODO("Not yet implemented")
+        return taskRepository.findAll()
+
     }
 
-    override fun delete(taskId: String): Boolean {
-        TODO("Not yet implemented")
+    override fun delete(taskId: String) {
+        return taskRepository.deleteById(taskId)
+
+    }
+
+    override fun findTaskByUserId(userId: String): List<Task>? {
+        return taskRepository.findTaskByUserId(userId)
     }
 
 
