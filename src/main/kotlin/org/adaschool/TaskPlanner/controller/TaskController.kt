@@ -1,16 +1,14 @@
 package org.adaschool.TaskPlanner.controller
 
-import org.adaschool.TaskPlanner.controller.dto.TaskDto
-import org.adaschool.TaskPlanner.controller.dto.UserDto
-import org.adaschool.TaskPlanner.model.Task
-import org.adaschool.TaskPlanner.model.User
+import org.adaschool.TaskPlanner.data.document.Task
+import org.adaschool.TaskPlanner.data.dto.TaskDto
 import org.adaschool.TaskPlanner.services.TaskService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.lang.Exception
 
 @RestController
-@RequestMapping("/tasks")
+@RequestMapping("/v1/tasks")
 class TaskController(@Autowired val taskService: TaskService){
 
     //CRUD Operations
@@ -44,7 +42,7 @@ class TaskController(@Autowired val taskService: TaskService){
     }
     //Delete
     @DeleteMapping("/{id}")
-    fun delete(@PathVariable id:String):Boolean{
+    fun delete(@PathVariable id:String){
         return taskService.delete(id)
 
 

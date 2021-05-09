@@ -1,14 +1,14 @@
 package org.adaschool.TaskPlanner.controller
 
-import org.adaschool.TaskPlanner.controller.dto.UserDto
-import org.adaschool.TaskPlanner.model.User
+import org.adaschool.TaskPlanner.data.User
+import org.adaschool.TaskPlanner.data.dto.UserDto
 import org.adaschool.TaskPlanner.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.lang.Exception
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/v1/users")
 class UserController(@Autowired val userService: UserService) {
 
     //CRUD Operations
@@ -42,7 +42,7 @@ class UserController(@Autowired val userService: UserService) {
     }
     //Delete
     @DeleteMapping("/{id}")
-    fun delete(@PathVariable id:String):Boolean{
+    fun delete(@PathVariable id:String){
         return userService.delete(id)
 
 
