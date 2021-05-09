@@ -1,7 +1,6 @@
 package org.adaschool.TaskPlanner.controller
 
-import org.adaschool.TaskPlanner.controller.dto.UserDto
-import org.adaschool.TaskPlanner.model.User
+import org.adaschool.TaskPlanner.data.dto.UserDto
 import org.adaschool.TaskPlanner.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*

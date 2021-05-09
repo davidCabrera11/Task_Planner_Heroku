@@ -1,6 +1,6 @@
 package org.adaschool.TaskPlanner.services
 
-import org.adaschool.TaskPlanner.controller.dto.TaskDto
+import org.adaschool.TaskPlanner.data.dto.TaskDto
 import org.adaschool.TaskPlanner.model.Task
 
 interface TaskService {

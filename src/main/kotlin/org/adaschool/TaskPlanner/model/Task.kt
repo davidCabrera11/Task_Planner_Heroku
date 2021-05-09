@@ -1,6 +1,6 @@
 package org.adaschool.TaskPlanner.model
 
-import org.adaschool.TaskPlanner.controller.dto.TaskDto
+import org.adaschool.TaskPlanner.data.dto.TaskDto
 import java.util.*
 
 data class Task(

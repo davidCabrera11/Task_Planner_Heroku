@@ -1,7 +1,7 @@
 package org.adaschool.TaskPlanner.services
 
-import org.adaschool.TaskPlanner.controller.dto.UserDto
-import org.adaschool.TaskPlanner.model.User
+import org.adaschool.TaskPlanner.data.User
+import org.adaschool.TaskPlanner.data.dto.UserDto
 
 interface UserService {
 
@@ -9,7 +9,7 @@ interface UserService {
     //CRUD Operations
 
     //Create
-    fun save(userDto: UserDto):User
+    fun save(userDto: UserDto): User
 
     //Update
     fun update(userId: String,userDto: UserDto):User
@@ -23,5 +23,5 @@ interface UserService {
     fun all():List<User>
 
     //Delete
-    fun delete(userId:String):Boolean
+    fun delete(userId:String)
 }
