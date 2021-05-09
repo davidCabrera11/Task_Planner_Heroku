@@ -3,12 +3,14 @@ package org.adaschool.TaskPlanner.services
 import org.adaschool.TaskPlanner.data.User
 import org.adaschool.TaskPlanner.data.dto.UserDto
 import org.adaschool.TaskPlanner.data.repository.UserRepository
+import org.adaschool.TaskPlanner.utils.RoleEnum
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.security.crypto.bcrypt.BCrypt
 import org.springframework.stereotype.Service
+import java.util.concurrent.atomic.AtomicLong
 
 @Service
 class UserServiceMongoDb(@Autowired val userRepository: UserRepository): UserService {
-
 
 
     override fun save(userDto: UserDto): User {
