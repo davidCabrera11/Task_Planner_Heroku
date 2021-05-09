@@ -5,7 +5,7 @@ import org.adaschool.TaskPlanner.model.Task
 import org.springframework.stereotype.Service
 import java.util.concurrent.atomic.AtomicLong
 
-@Service
+
 class TaskServiceHashMap:TaskService {
 
     private val tasks = HashMap<String,Task>()
