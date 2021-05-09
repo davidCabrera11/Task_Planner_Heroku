@@ -4,7 +4,9 @@ import org.adaschool.TaskPlanner.data.document.Task
 import org.adaschool.TaskPlanner.data.dto.TaskDto
 import org.adaschool.TaskPlanner.data.repository.TaskRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
+@Service
 class TaskServiceMongoDb(@Autowired val taskRepository: TaskRepository):TaskService {
 
 
