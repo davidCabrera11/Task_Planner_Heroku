@@ -1,4 +1,4 @@
-package org.adaschool.TaskPlanner.document
+package org.adaschool.TaskPlanner.data
 
 import org.adaschool.TaskPlanner.utils.RoleEnum
 import org.springframework.data.annotation.Id
