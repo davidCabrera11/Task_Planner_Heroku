@@ -32,11 +32,9 @@ class UserServiceHashMap:UserService {
     }
 
     override fun save(userDto: UserDto): User {
-        val user = User( userDto)
-        user.id = nextOid.incrementAndGet().toString()
-        users[userDto.id] = user
-        return user
+        TODO("Not yet implemented")
     }
+
 
     override fun update(userId: String, userDto: UserDto): User {
         if (users.containsKey(userId)) {
