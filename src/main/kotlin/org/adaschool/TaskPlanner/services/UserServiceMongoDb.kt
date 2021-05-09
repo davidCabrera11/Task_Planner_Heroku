@@ -4,7 +4,9 @@ import org.adaschool.TaskPlanner.data.User
 import org.adaschool.TaskPlanner.data.dto.UserDto
 import org.adaschool.TaskPlanner.data.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
+@Service
 class UserServiceMongoDb(@Autowired val userRepository: UserRepository): UserService {
 
 

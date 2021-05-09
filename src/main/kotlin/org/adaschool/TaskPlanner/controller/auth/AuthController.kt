@@ -5,12 +5,15 @@ import io.jsonwebtoken.SignatureAlgorithm
 import org.adaschool.TaskPlanner.data.User
 import org.adaschool.TaskPlanner.data.dto.LoginDto
 import org.adaschool.TaskPlanner.data.dto.TokenDto
+import org.adaschool.TaskPlanner.exceptions.InvalidCredentialsException
+import org.adaschool.TaskPlanner.exceptions.UserNotFoundException
 import org.adaschool.TaskPlanner.services.UserService
 import org.adaschool.TaskPlanner.utils.CLAIMS_ROLES_KEY
 import org.adaschool.TaskPlanner.utils.RoleEnum
 import org.adaschool.TaskPlanner.utils.TOKEN_DURATION_MINUTES
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.security.crypto.bcrypt.BCrypt
 import org.springframework.web.bind.annotation.*
 import java.util.*
 
@@ -30,6 +33,7 @@ class AuthController(
         val token = generateAppToken("1213213", expirationDate.time)
         return TokenDto(token, expirationDate.time)
 
+
      /*   val user = userService.findByEmail(loginDto.email) ?: throw UserNotFoundException()
 
         if (BCrypt.checkpw(loginDto.password, user.passwordHash)){
@@ -37,9 +41,9 @@ class AuthController(
             return generateTokenDto(user)
 
         }else
-            throw InvalidCredentialsException()*/
+            throw InvalidCredentialsException()
 
-
+*/
     }
 
 
@@ -57,7 +61,7 @@ class AuthController(
     private fun generateAppToken(userId: String, expirationDate: Date): String {
         return Jwts.builder()
             .setSubject(userId)
-            .claim(CLAIMS_ROLES_KEY, listOf(RoleEnum.ADMIN))
+            .claim(CLAIMS_ROLES_KEY, listOf(RoleEnum.USER))
             .setIssuedAt(Date())
             .setExpiration(expirationDate)
             .signWith(SignatureAlgorithm.HS256, secret)

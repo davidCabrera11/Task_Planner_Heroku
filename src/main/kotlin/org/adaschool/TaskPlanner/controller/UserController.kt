@@ -1,5 +1,6 @@
 package org.adaschool.TaskPlanner.controller
 
+import org.adaschool.TaskPlanner.data.User
 import org.adaschool.TaskPlanner.data.dto.UserDto
 import org.adaschool.TaskPlanner.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
@@ -41,7 +42,7 @@ class UserController(@Autowired val userService: UserService) {
     }
     //Delete
     @DeleteMapping("/{id}")
-    fun delete(@PathVariable id:String):Boolean{
+    fun delete(@PathVariable id:String){
         return userService.delete(id)
 
 
