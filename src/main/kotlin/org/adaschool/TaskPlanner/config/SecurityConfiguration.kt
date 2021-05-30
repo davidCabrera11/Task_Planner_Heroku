@@ -26,7 +26,7 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter() {
             .authorizeRequests()
             .antMatchers(HttpMethod.POST, "/v1/auth").permitAll()
             .antMatchers(HttpMethod.GET, "/v1/health").permitAll()
-            .antMatchers(HttpMethod.GET, "/v1/users").permitAll()
+            .antMatchers(HttpMethod.POST, "/v1/users").permitAll()
             .anyRequest().authenticated()
             .and()
             .sessionManagement()
